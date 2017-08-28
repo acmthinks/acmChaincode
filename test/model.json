@@ -1,0 +1,21 @@
+{
+  "$class": "com.ibm.demo.telecom.Owner",
+  "ownerId": "000001",
+  "firstName": "Andrea",
+  "lastName": "Crawford"
+}
+
+{
+  "$class": "com.ibm.demo.telecom.Phone",
+  "macId": "macId:FF:FF:FF:FF:FF:FF",
+  "owner": "resource:com.ibm.demo.telecom.Owner#000001",
+  "field1": "original value in field 1"
+  "field2": "original value in field 2"
+}
+
+{
+  "$class": "com.ibm.demo.telecom.Transaction",
+  "phone": "resource:com.ibm.demo.telecom.Phone#macId:FF:FF:FF:FF:FF:FF",
+  "newValue": "some new value for the transaction"
+}
+
