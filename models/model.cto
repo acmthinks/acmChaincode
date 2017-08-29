@@ -21,7 +21,7 @@ participant NetworkProvider identified by providerId {
   o String companyName
 }
 
-transaction Transaction {
+transaction Txn {
   --> Phone phone
   o String newValue
 }
