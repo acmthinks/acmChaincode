@@ -3,31 +3,51 @@
  */
 namespace com.ibm.demo.telecomm
 
-asset Phone identified by macId {
-  o String macId
-  --> Participant owner
-  o String field1
-  o String field2
+asset Device identified by deviceID{
+  o String deviceID
+  o String imeiID
+  o String macID
+  o String deviceType
+  o String eSIMM
+  o String currentLocation
 }
 
-participant Owner identified by ownerId {
-  o String ownerId
+participant Vendor identified by vendorID {
+  o String vendorID 
+  o String vendorName
+}
+
+participant Customer identified by customerID{
+  o String customerID
   o String firstName
   o String lastName
 }
 
-participant NetworkProvider identified by providerId {
-  o String providerId
-  o String companyName
+participant NetworkProvider identified by providerID {
+  o String providerID
+  o String providerName
 }
 
-transaction Txn {
-  --> Phone phone
-  o String newValue
+participant Partner identified by partnerID{
+  o String partnerID
+  o String partnerName
 }
 
-event Activation {
-  --> Phone phone
-  o String oldValue
+event DeviceLocation{
+  --> Device device
+  o String lastLocation
+}
+
+transaction ActivationTransaction {
+--> Device device
+--> NetworkProvider networkProvider 
+--> Customer customer
+  o String oldProviderID 
+}
+
+transaction assetTransaction{
+  --> Device device
+  --> Vendor vendor
+  --> Partner partner
   o String newValue
 }
