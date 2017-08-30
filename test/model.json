@@ -16,6 +16,6 @@
 {
   "$class": "com.ibm.demo.telecomm.Transaction",
   "phone": "resource:com.ibm.demo.telecomm.Phone#macId:FF:FF:FF:FF:FF:FF",
-  "newValue": "some new value for the transaction"
+  "newValue": "Billy"
 }
 
